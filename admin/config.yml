@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: jsuhar4/saiphhaven
+  branch: main
+
+media_folder: "images/work/noema"
+public_folder: "/images/work/noema"
+
+collections:
+  - name: "noema"
+    label: "Noema Gallery"
+    files:
+      - name: "gallery"
+        label: "Gallery Images"
+        file: "images/work/noema/gallery.json"
+        format: "json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Image"
+                name: "src"
+                widget: "image"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                required: false
+              - label: "Alt Text"
+                name: "alt"
+                widget: "string"
+                required: false
+              - label: "Note"
+                name: "note"
+                widget: "text"
+                required: false
