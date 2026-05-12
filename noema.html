@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noema - Saiph</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="portal-body noema-body">
+  <div class="crt-overlay"></div>
+  <div class="crt-vignette"></div>
+  <div class="texture-overlay"></div>
+  <div class="grain"></div>
+
+  <main class="flash-stage noema-stage">
+    <aside class="stage-menu">
+      <a href="index.html" class="stage-mark">saiph</a>
+      <nav class="stage-links" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="about.html">profile</a>
+        <a href="sound.html">audio</a>
+        <a href="noema.html">noema</a>
+      </nav>
+      <div class="stage-meter">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </aside>
+
+    <section class="stage-main">
+      <header class="stage-topline">
+        <span>image cache</span>
+        <span>noema / underground work</span>
+        <span>open archive</span>
+      </header>
+
+      <section class="noema-hero">
+        <div class="noema-title-panel">
+          <p class="console-kicker">loose visual transmissions</p>
+          <h1>noema</h1>
+          <p>
+            A quieter cache for images, fragments, underground work, and visual
+            notes that do not need a full project room.
+          </p>
+        </div>
+
+        <article class="noema-index-panel">
+          <span>folder</span>
+          <strong>images/work/noema</strong>
+          <p>Add images to this lane, list them in the gallery manifest, and the page will build the grid from that signal.</p>
+        </article>
+      </section>
+
+      <section class="noema-meta">
+        <article>
+          <span>mode</span>
+          <strong>miscellaneous work</strong>
+        </article>
+        <article>
+          <span>scale</span>
+          <strong>small archive, expandable grid</strong>
+        </article>
+        <article>
+          <span>frame</span>
+          <strong>proportional image borders</strong>
+        </article>
+      </section>
+
+      <section
+        class="noema-gallery"
+        data-gallery-manifest="images/work/noema/gallery.json"
+        aria-live="polite"
+      >
+        <p class="noema-empty">Loading image cache.</p>
+      </section>
+
+      <footer class="stage-footer">
+        <span>image cache / loose work</span>
+        <a href="index.html#work">back to systems</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

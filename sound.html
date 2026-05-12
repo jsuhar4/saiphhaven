@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saiph Sound</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="portal-body">
+  <div class="crt-overlay"></div>
+  <div class="crt-vignette"></div>
+  <div class="texture-overlay"></div>
+  <div class="grain"></div>
+
+  <main class="flash-stage sound-stage">
+    <aside class="stage-menu">
+      <a href="index.html" class="stage-mark">saiph</a>
+      <nav class="stage-links" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="about.html">profile</a>
+        <a href="haven.html">haven</a>
+        <a href="noema.html">noema</a>
+        <a href="#snippets">snippets</a>
+        <a href="index.html#archive">archive</a>
+      </nav>
+      <div class="stage-meter">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </aside>
+
+    <section class="stage-main">
+      <header class="stage-topline">
+        <span>audio deck</span>
+        <span>haven / 5 tracks</span>
+        <span>standby</span>
+      </header>
+
+      <section class="audio-grid">
+        <div class="audio-cover">
+          <img src="images/work/haven1.png" alt="HAVEN front cover">
+          <a href="haven.html">release page</a>
+        </div>
+
+        <article class="audio-console" data-player>
+          <div class="player-screen">
+            <span class="player-kicker">now selected</span>
+            <strong data-player-title>CARPE DIEM</strong>
+            <p data-player-status>Audio files can drop in next.</p>
+          </div>
+
+          <div class="player-progress" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <div class="player-tracklist" role="list" aria-label="HAVEN tracklist">
+            <button type="button" class="player-track is-active" data-track="CARPE DIEM" data-src="audio/haven/saiph - CARPE DIEM (Haven Edition).wav" role="listitem">01 / CARPE DIEM</button>
+            <button type="button" class="player-track" data-track="HAVEN" data-src="audio/haven/saiph - HAVEN (Haven Edition).wav" role="listitem">02 / HAVEN</button>
+            <button type="button" class="player-track" data-track="XM93" data-src="audio/haven/saiph - XM93 (Haven Edition).wav" role="listitem">03 / XM93</button>
+            <button type="button" class="player-track" data-track="DATAFIER" data-src="audio/haven/saiph - DATAFIER (Haven Edition).wav" role="listitem">04 / DATAFIER</button>
+            <button type="button" class="player-track" data-track="IPOD COLOR" data-src="audio/haven/saiph - IPOD COLOR (Haven Edition).wav" role="listitem">05 / IPOD COLOR</button>
+          </div>
+
+          <div class="player-controls" aria-label="Playback controls">
+            <button type="button" data-action="previous" aria-label="Previous track">prev</button>
+            <button type="button" data-action="play" aria-label="Play selected track">play</button>
+            <button type="button" data-action="pause" aria-label="Pause playback">pause</button>
+            <button type="button" data-action="next" aria-label="Next track">next</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="snippet-strip" id="snippets" data-player>
+        <div class="snippet-heading">
+          <span>side bay</span>
+          <strong>unreleased snippets</strong>
+          <p>Unreleased clips live beside the HAVEN deck.</p>
+        </div>
+
+        <div class="snippet-list" role="list" aria-label="Unreleased snippets">
+          <button type="button" class="player-track is-active" data-track="EMENSITA" data-src="audio/snippets/emensitá.wav" role="listitem">clip 01 / emensita</button>
+          <button type="button" class="player-track" data-track="SNIPPET 02" role="listitem">clip 02 / empty slot</button>
+          <button type="button" class="player-track" data-track="SNIPPET 03" role="listitem">clip 03 / empty slot</button>
+        </div>
+
+        <div class="snippet-readout">
+          <span>selected</span>
+          <strong data-player-title>EMENSITA</strong>
+          <p data-player-status>Snippet slot ready.</p>
+          <div class="player-progress" aria-hidden="true"><span></span></div>
+          <div class="player-controls" aria-label="Snippet controls">
+            <button type="button" data-action="previous">prev</button>
+            <button type="button" data-action="play">play</button>
+            <button type="button" data-action="pause">pause</button>
+            <button type="button" data-action="next">next</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="stage-footer">
+        <span>saiph audio system / module 01</span>
+        <a href="index.html#work">back to systems</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
