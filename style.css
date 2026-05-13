@@ -3334,6 +3334,7 @@ h2 {
 }
 
 .stage-news article,
+.home-module,
 .work-node,
 .audio-cover,
 .audio-console {
@@ -3347,6 +3348,7 @@ h2 {
 }
 
 .stage-news span,
+.home-module span,
 .work-node span {
   display: block;
   margin-bottom: 8px;
@@ -3358,6 +3360,7 @@ h2 {
 }
 
 .stage-news strong,
+.home-module strong,
 .work-node strong {
   display: block;
   color: #06101e;
@@ -3371,6 +3374,67 @@ h2 {
   color: rgba(9,24,40,0.74);
   font-size: 12px;
   line-height: 1.5;
+}
+
+.home-module {
+  min-height: 132px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.28s ease,
+    filter 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.home-module:hover,
+.home-module:focus-visible {
+  transform: translateY(-3px);
+  filter: saturate(1.06) contrast(1.02);
+}
+
+.quote-module strong {
+  font-family: "SaiphBody", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(18px, 2.8vw, 28px);
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.noema-highlight-module {
+  background:
+    linear-gradient(rgba(244,247,241,0.46), rgba(18,26,25,0.68)),
+    var(--highlight-image, url("images/waterdrops1.jpg"));
+  background-size: cover;
+  background-position: center;
+}
+
+.noema-highlight-module.has-highlight-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  backdrop-filter: blur(1.2px);
+  background: rgba(18,26,25,0.18);
+  transition: opacity 0.28s ease;
+}
+
+.noema-highlight-module.has-highlight-image:hover::before,
+.noema-highlight-module.has-highlight-image:focus-visible::before {
+  opacity: 0.08;
+}
+
+.noema-highlight-module span,
+.noema-highlight-module strong,
+.noema-highlight-module p {
+  position: relative;
+  z-index: 1;
+}
+
+.noema-highlight-module.has-highlight-image span,
+.noema-highlight-module.has-highlight-image strong,
+.noema-highlight-module.has-highlight-image p {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.48);
 }
 
 .stage-work {
@@ -3586,6 +3650,7 @@ h2 {
 
 .hero-copy,
 .stage-news article,
+.home-module,
 .work-node,
 .audio-cover,
 .audio-console,
@@ -3607,11 +3672,13 @@ h2 {
 
 .hero-copy h1,
 .stage-news strong,
+.home-module strong,
 .work-node strong {
   color: var(--mist-ink);
 }
 
 .stage-news span,
+.home-module span,
 .work-node span,
 .console-kicker {
   color: var(--mist-green-dark);

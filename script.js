@@ -3,6 +3,31 @@ const floatingUI = document.querySelectorAll(".floating-ui");
 const cards = document.querySelectorAll(".work-card");
 const players = document.querySelectorAll("[data-player]");
 const galleryMounts = document.querySelectorAll("[data-gallery-manifest]");
+const quoteModules = document.querySelectorAll("[data-random-quote]");
+const noemaHighlights = document.querySelectorAll("[data-noema-highlight]");
+
+const japaneseQuotes = [
+  {
+    text: "静けさの中に信号がある",
+    translation: "There is a signal inside stillness."
+  },
+  {
+    text: "夢は古い機械のように光る",
+    translation: "Dreams glow like old machines."
+  },
+  {
+    text: "忘れた場所にも音は残る",
+    translation: "Sound remains even in forgotten places."
+  },
+  {
+    text: "余白は入口になる",
+    translation: "Empty space becomes an entrance."
+  },
+  {
+    text: "記憶は水面のコード",
+    translation: "Memory is code on the water."
+  }
+];
 
 document.addEventListener("mousemove", (event) => {
   const x = event.clientX / window.innerWidth - 0.5;
@@ -41,6 +66,20 @@ cards.forEach((card) => {
   card.addEventListener("mouseleave", () => {
     card.style.transform = "";
   });
+});
+
+quoteModules.forEach((module) => {
+  const quote = japaneseQuotes[Math.floor(Math.random() * japaneseQuotes.length)];
+  const text = module.querySelector("[data-quote-text]");
+  const translation = module.querySelector("[data-quote-translation]");
+
+  if (text) {
+    text.textContent = quote.text;
+  }
+
+  if (translation) {
+    translation.textContent = quote.translation;
+  }
 });
 
 players.forEach((player) => {
@@ -205,5 +244,62 @@ galleryMounts.forEach((mount) => {
     })
     .catch(() => {
       mount.innerHTML = '<p class="noema-empty">Gallery manifest could not be loaded. Serve the site locally or check images/work/noema/gallery.json.</p>';
+    });
+});
+
+noemaHighlights.forEach((highlight) => {
+  fetch("images/work/noema/gallery.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Noema gallery unavailable.");
+      }
+
+      return response.json();
+    })
+    .then((galleryData) => {
+      const groups = Array.isArray(galleryData.groups) ? galleryData.groups : [];
+      const images = groups.flatMap((group) => {
+        const groupImages = Array.isArray(group.images) ? group.images : [];
+
+        return groupImages.map((image) => ({
+          ...image,
+          groupTitle: group.title || "noema"
+        }));
+      });
+
+      if (!images.length) {
+        return;
+      }
+
+      const image = images[Math.floor(Math.random() * images.length)];
+      const source = image.src || "";
+      const imageUrl = source.startsWith("/")
+        ? new URL(source, window.location.origin).href
+        : new URL(source, new URL("images/work/noema/gallery.json", window.location.href)).href;
+      const title = highlight.querySelector("[data-highlight-title]");
+      const note = highlight.querySelector("[data-highlight-note]");
+
+      highlight.style.setProperty("--highlight-image", `url("${imageUrl}")`);
+      highlight.classList.add("has-highlight-image");
+
+      if (title) {
+        title.textContent = image.groupTitle;
+      }
+
+      if (note) {
+        note.textContent = image.title ? `${image.title} / ${image.note || "open cache"}` : image.note || "open cache";
+      }
+    })
+    .catch(() => {
+      const title = highlight.querySelector("[data-highlight-title]");
+      const note = highlight.querySelector("[data-highlight-note]");
+
+      if (title) {
+        title.textContent = "noema";
+      }
+
+      if (note) {
+        note.textContent = "Open the image cache.";
+      }
     });
 });
