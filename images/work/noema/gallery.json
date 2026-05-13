@@ -32,19 +32,19 @@
     },
     {
       "title": "meaning's edge djrum rework",
-      "note": "Original full-size images preserved for this pair.",
+      "note": "Web-sized images preserved from the original pair.",
       "images": [
         {
-          "src": "saiphhavensiteimages/meaning's edge djrum rework/001.png",
+          "src": "saiphhavensiteimages/meaning's edge djrum rework/001.jpg",
           "alt": "Meaning's Edge Djrum rework image 1",
           "title": "djrum 01",
-          "note": "original image"
+          "note": "web image"
         },
         {
-          "src": "saiphhavensiteimages/meaning's edge djrum rework/002.png",
+          "src": "saiphhavensiteimages/meaning's edge djrum rework/002.jpg",
           "alt": "Meaning's Edge Djrum rework image 2",
           "title": "djrum 02",
-          "note": "original image"
+          "note": "web image"
         }
       ]
     },

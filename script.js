@@ -303,3 +303,25 @@ noemaHighlights.forEach((highlight) => {
       }
     });
 });
+
+document.addEventListener("click", (event) => {
+  const imageLink = event.target.closest(".noema-image-link");
+
+  if (!imageLink || !window.matchMedia("(hover: none), (pointer: coarse)").matches) {
+    return;
+  }
+
+  const art = imageLink.closest(".noema-art");
+
+  if (!art) {
+    return;
+  }
+
+  if (!art.classList.contains("is-open")) {
+    event.preventDefault();
+    document.querySelectorAll(".noema-art.is-open").forEach((openArt) => {
+      openArt.classList.remove("is-open");
+    });
+    art.classList.add("is-open");
+  }
+});
