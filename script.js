@@ -223,7 +223,7 @@ galleryMounts.forEach((mount) => {
                 <img src="${imageUrl}" alt="${alt}" loading="lazy">
                 <span class="noema-zoom-icon" aria-hidden="true"></span>
               </a>
-              <figcaption><strong>${title}</strong><span>${note}</span></figcaption>
+              <figcaption><strong>${title}</strong><span>${note}</span><em>via unknown source</em></figcaption>
             </figure>
           `;
         }).join("");
