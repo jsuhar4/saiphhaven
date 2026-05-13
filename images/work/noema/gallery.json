@@ -1,0 +1,130 @@
+{
+  "groups": [
+    {
+      "title": "eco emotion red",
+      "note": "A loose Noema signal with saturated emotional heat and old-web texture.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/eco emotion red.jpg",
+          "alt": "Eco emotion red artwork",
+          "title": "eco emotion red",
+          "note": "single transmission"
+        }
+      ]
+    },
+    {
+      "title": "emensity found within",
+      "note": "Two connected square fragments grouped as one small system.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/emensity found within/1.jpg",
+          "alt": "Emensity Found Within image 1",
+          "title": "emensity 01",
+          "note": "paired fragment"
+        },
+        {
+          "src": "saiphhavensiteimages/emensity found within/2.jpg",
+          "alt": "Emensity Found Within image 2",
+          "title": "emensity 02",
+          "note": "paired fragment"
+        }
+      ]
+    },
+    {
+      "title": "meaning's edge djrum rework",
+      "note": "Original full-size images preserved for this pair.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/meaning's edge djrum rework/001.png",
+          "alt": "Meaning's Edge Djrum rework image 1",
+          "title": "djrum 01",
+          "note": "original image"
+        },
+        {
+          "src": "saiphhavensiteimages/meaning's edge djrum rework/002.png",
+          "alt": "Meaning's Edge Djrum rework image 2",
+          "title": "djrum 02",
+          "note": "original image"
+        }
+      ]
+    },
+    {
+      "title": "song wars",
+      "note": "Front and back artwork presented side by side.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/song wars/songwarsfront.jpg",
+          "alt": "Song Wars front artwork",
+          "title": "front",
+          "note": "cover side"
+        },
+        {
+          "src": "saiphhavensiteimages/song wars/songwarsback.jpg",
+          "alt": "Song Wars back artwork",
+          "title": "back",
+          "note": "reverse side"
+        }
+      ]
+    },
+    {
+      "title": "steel nostalgia",
+      "note": "A two-image set with colder material memory.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/steel nostalgia/1.jpg",
+          "alt": "Steel Nostalgia image 1",
+          "title": "steel 01",
+          "note": "paired fragment"
+        },
+        {
+          "src": "saiphhavensiteimages/steel nostalgia/2.jpg",
+          "alt": "Steel Nostalgia image 2",
+          "title": "steel 02",
+          "note": "paired fragment"
+        }
+      ]
+    },
+    {
+      "title": "total khaos",
+      "note": "A vertical transmission in the Noema cache.",
+      "images": [
+        {
+          "src": "saiphhavensiteimages/totalkhaos.jpg",
+          "alt": "Total Khaos artwork",
+          "title": "total khaos",
+          "note": "single transmission"
+        }
+      ]
+    },
+    {
+      "title": "stereostar da un'altra dimensione",
+      "note": "Cover variations grouped as one expandable sequence.",
+      "images": [
+        {
+          "src": "../stereostar - 2025/stereostarcover3.jpg",
+          "alt": "Stereostar cover variation 3",
+          "title": "cover 03",
+          "note": "variant"
+        },
+        {
+          "src": "../stereostar - 2025/stereostarcover4.jpg",
+          "alt": "Stereostar cover variation 4",
+          "title": "cover 04",
+          "note": "variant"
+        },
+        {
+          "src": "../stereostar - 2025/stereostarcover5.jpg",
+          "alt": "Stereostar cover variation 5",
+          "title": "cover 05",
+          "note": "variant"
+        },
+        {
+          "src": "../stereostar - 2025/stereostarcover6.jpg",
+          "alt": "Stereostar cover variation 6",
+          "title": "cover 06",
+          "note": "variant"
+        }
+      ]
+    }
+  ]
+}

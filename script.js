@@ -150,25 +150,56 @@ galleryMounts.forEach((mount) => {
 
       return response.json();
     })
-    .then((items) => {
-      if (!Array.isArray(items) || !items.length) {
+    .then((galleryData) => {
+      const groups = Array.isArray(galleryData.groups)
+        ? galleryData.groups
+        : [{ title: "image cache", note: "", images: Array.isArray(galleryData) ? galleryData : galleryData.images }];
+
+      if (!groups.some((group) => Array.isArray(group.images) && group.images.length)) {
         mount.innerHTML = '<p class="noema-empty">No images are listed in this cache yet.</p>';
         return;
       }
 
       const manifestUrl = new URL(manifestPath, window.location.href);
+      const siteRoot = new URL(window.location.origin);
 
-      mount.innerHTML = items.map((item, index) => {
-        const imageUrl = new URL(item.src, manifestUrl).href;
-        const title = item.title || `signal ${String(index + 1).padStart(2, "0")}`;
-        const alt = item.alt || title;
-        const note = item.note ? `<figcaption><strong>${title}</strong><span>${item.note}</span></figcaption>` : `<figcaption><strong>${title}</strong></figcaption>`;
+      mount.innerHTML = groups.map((group, groupIndex) => {
+        const items = Array.isArray(group.images) ? group.images : [];
+        const groupTitle = group.title || `cache ${String(groupIndex + 1).padStart(2, "0")}`;
+        const groupNote = group.note || "";
+        const countLabel = `${items.length} ${items.length === 1 ? "image" : "images"}`;
+
+        const images = items.map((item, index) => {
+          const source = item.src || "";
+          const imageUrl = source.startsWith("/")
+            ? new URL(source, siteRoot).href
+            : new URL(source, manifestUrl).href;
+          const title = item.title || `signal ${String(index + 1).padStart(2, "0")}`;
+          const alt = item.alt || title;
+          const note = item.note || "open detail";
+
+          return `
+            <figure class="noema-art">
+              <a class="noema-image-link" href="${imageUrl}" target="_blank" rel="noopener" aria-label="Open ${alt}">
+                <img src="${imageUrl}" alt="${alt}" loading="lazy">
+                <span class="noema-zoom-icon" aria-hidden="true"></span>
+              </a>
+              <figcaption><strong>${title}</strong><span>${note}</span></figcaption>
+            </figure>
+          `;
+        }).join("");
 
         return `
-          <figure class="noema-art">
-            <img src="${imageUrl}" alt="${alt}" loading="lazy">
-            ${note}
-          </figure>
+          <article class="noema-group">
+            <header class="noema-group-head">
+              <span>${countLabel}</span>
+              <strong>${groupTitle}</strong>
+              ${groupNote ? `<p>${groupNote}</p>` : ""}
+            </header>
+            <div class="noema-group-grid">
+              ${images}
+            </div>
+          </article>
         `;
       }).join("");
     })
